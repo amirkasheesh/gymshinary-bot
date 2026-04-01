@@ -1,0 +1,6 @@
+@Gymshinary.Bot_HostAddress = http://localhost:5128
+
+GET {{Gymshinary.Bot_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
