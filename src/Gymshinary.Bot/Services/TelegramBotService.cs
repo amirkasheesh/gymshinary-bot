@@ -35,7 +35,7 @@ public class TelegramBotService : BackgroundService
         );
     }
 
-    private async Task HandleUpdateAsync(ITelegramBotClient client, Update update, CancellationToken token)
+    internal async Task HandleUpdateAsync(ITelegramBotClient client, Update update, CancellationToken token)
     {
         if (update.Message == null || update.Message.Text == null)
         {
@@ -44,7 +44,7 @@ public class TelegramBotService : BackgroundService
         var messageText = update.Message.Text;
         var chatId = update.Message.Chat.Id;
 
-        _logger.LogInformation($"Получено сообщение: '{messageText}' от пользователя {chatId}");
+        _logger.LogInformation("Обработка сообщения от пользователя {ChatId}", chatId);
 
         switch (messageText)
         {

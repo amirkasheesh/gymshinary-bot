@@ -12,4 +12,8 @@
     <PackageReference Include="Telegram.Bot" Version="22.9.5.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="Gymshinary.Tests" />
+  </ItemGroup>
+
 </Project>
