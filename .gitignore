@@ -52,3 +52,8 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# Local dotnet / macOS cache
+.local/
+.nuget/
+Library/
