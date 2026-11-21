@@ -2,9 +2,9 @@ namespace Gymshinary.Bot.Domain.Entities;
 
 public class OperatorActionLog
 {
-    public Guid Id { get; set; } = Guid.NewGuid();
-    public Guid SessionId { get; set; }
-    public long OperatorId { get; set; }
-    public string Reason { get; set; } = string.Empty;
-    public DateTime Timestamp { get; set; } = DateTime.UtcNow;
+    public Guid Id { get; init; } = Guid.NewGuid();
+    public Guid SessionId { get; init; }
+    public long OperatorId { get; init; }
+    public string Reason { get; init; } = string.Empty;
+    public DateTime Timestamp { get; init; } = DateTime.UtcNow;
 }

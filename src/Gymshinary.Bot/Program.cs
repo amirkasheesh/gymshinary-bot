@@ -9,6 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // 2. Настраиваем наше приложение для запуска, регистрируя сервисы
 builder.Services.Configure<BotConfiguration>(builder.Configuration.GetRequiredSection("BotConfiguration"));
+builder.Services.Configure<OperatorConfiguration>(builder.Configuration.GetSection("OperatorConfiguration"));
+builder.Services.AddSingleton<IWorkoutRepository, InMemoryWorkoutRepository>();
+builder.Services.AddScoped<IWorkoutService, WorkoutService>();
+builder.Services.AddScoped<IOperatorWorkoutService, WorkoutService>();
 builder.Services.AddSingleton<ITelegramBotClient>(serviceProvider =>
 {
     var botConfig = serviceProvider.GetRequiredService<IOptions<BotConfiguration>>().Value;
